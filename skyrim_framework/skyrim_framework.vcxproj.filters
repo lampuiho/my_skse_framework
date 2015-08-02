@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="MySkseExtension">
+      <UniqueIdentifier>{8f55fa62-987a-4c9d-ac2e-d90c41ced364}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Duel">
+      <UniqueIdentifier>{fb803395-fe13-466e-8b7b-6fa03f1baf74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelersTower">
+      <UniqueIdentifier>{7639039d-559a-4b36-befe-8fbf656d6f8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="REQ">
+      <UniqueIdentifier>{2fccf8be-bdb8-4a59-ba3c-d261fc60f152}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="alchemysorter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common_const.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DiseasePoisonImmunity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormInitialiser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SerialisationUtilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MySkseExtension\MyPapyrusActor.cpp">
+      <Filter>MySkseExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="MySkseExtension\MyPapyrusAE.cpp">
+      <Filter>MySkseExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="MySkseExtension\MyPapyrusForm.cpp">
+      <Filter>MySkseExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="MySkseExtension\MyPapyrusObjectReference.cpp">
+      <Filter>MySkseExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="MySkseExtension\MyPapyrusPotion.cpp">
+      <Filter>MySkseExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="MySkseExtension\Utilities.cpp">
+      <Filter>MySkseExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="Duel\Duel.cpp">
+      <Filter>Duel</Filter>
+    </ClCompile>
+    <ClCompile Include="Duel\Duel_Const.cpp">
+      <Filter>Duel</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelersTower\LevelersTower.cpp">
+      <Filter>LevelersTower</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelersTower\LevelersTowerConst.cpp">
+      <Filter>LevelersTower</Filter>
+    </ClCompile>
+    <ClCompile Include="REQ\REQ_Impact.cpp">
+      <Filter>REQ</Filter>
+    </ClCompile>
+    <ClCompile Include="REQ\REQ_Init.cpp">
+      <Filter>REQ</Filter>
+    </ClCompile>
+    <ClCompile Include="REQ\REQ_StaminaCons.cpp">
+      <Filter>REQ</Filter>
+    </ClCompile>
+    <ClCompile Include="REQ\REQ_const.cpp">
+      <Filter>REQ</Filter>
+    </ClCompile>
+    <ClCompile Include="REQ\PapyrusRequiem.cpp">
+      <Filter>REQ</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="alchemysorter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common_const.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DiseasePoisonImmunity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormInitialiser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SerialisationUtilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MySkseExtension\MyGameApi.h">
+      <Filter>MySkseExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="MySkseExtension\MyPapyrusActor.h">
+      <Filter>MySkseExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="MySkseExtension\MyPapyrusAE.h">
+      <Filter>MySkseExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="MySkseExtension\MyPapyrusArgs.h">
+      <Filter>MySkseExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="MySkseExtension\MyPapyrusForm.h">
+      <Filter>MySkseExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="MySkseExtension\MyPapyrusObjectReference.h">
+      <Filter>MySkseExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="MySkseExtension\MyPapyrusPotion.h">
+      <Filter>MySkseExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="MySkseExtension\MyPapyrusSpell.h">
+      <Filter>MySkseExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="MySkseExtension\Utilities.h">
+      <Filter>MySkseExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="Duel\Duel.h">
+      <Filter>Duel</Filter>
+    </ClInclude>
+    <ClInclude Include="Duel\Duel_Const.h">
+      <Filter>Duel</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelersTower\LevelersTower.h">
+      <Filter>LevelersTower</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelersTower\LevelersTowerConst.h">
+      <Filter>LevelersTower</Filter>
+    </ClInclude>
+    <ClInclude Include="REQ\REQ_const.h">
+      <Filter>REQ</Filter>
+    </ClInclude>
+    <ClInclude Include="REQ\REQ_Impact.h">
+      <Filter>REQ</Filter>
+    </ClInclude>
+    <ClInclude Include="REQ\REQ_Init.h">
+      <Filter>REQ</Filter>
+    </ClInclude>
+    <ClInclude Include="REQ\REQ_StaminaCons.h">
+      <Filter>REQ</Filter>
+    </ClInclude>
+    <ClInclude Include="REQ\PapyrusRequiem.h">
+      <Filter>REQ</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="exports.def" />
+  </ItemGroup>
+</Project>

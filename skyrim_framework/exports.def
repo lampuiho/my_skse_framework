@@ -1,0 +1,4 @@
+LIBRARY	"skyrim_framework"
+EXPORTS
+SKSEPlugin_Query
+SKSEPlugin_Load
