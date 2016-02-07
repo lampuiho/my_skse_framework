@@ -68,7 +68,7 @@ bool SKSEPlugin_Query(const SKSEInterface * skse, PluginInfo * info)
 		_MESSAGE("papyrus interface too old (%d expected %d)", g_papyrus->interfaceVersion, SKSEPapyrusInterface::kInterfaceVersion);
 		return false;
 	}
-
+	/*
 #ifdef RequiemBuild
 	g_serialization = (SKSESerializationInterface *)skse->QueryInterface(kInterface_Serialization);
 	if (!g_serialization)
@@ -85,7 +85,7 @@ bool SKSEPlugin_Query(const SKSEInterface * skse, PluginInfo * info)
 		return false;
 	}
 #endif
-
+*/
 #ifdef AlchemySorter
 	// get the scaleform interface and query its version
 	g_scaleform = (SKSEScaleformInterface *)skse->QueryInterface(kInterface_Scaleform);
@@ -116,13 +116,14 @@ bool SKSEPlugin_Load(const SKSEInterface * skse)
 
 	srand(time(NULL));
 	g_papyrus->Register(RegisterPapyrus);
-	//g_loadEventDispatcher->AddEventSink(&g_FormInitialiser);
-#ifdef RequiemBuild
-	g_serialization->SetUniqueID(g_pluginHandle, 'REQ_');
-	g_serialization->SetRevertCallback(g_pluginHandle, Serialization_Revert);
-	g_serialization->SetSaveCallback(g_pluginHandle, Serialization_Save);
-	g_serialization->SetLoadCallback(g_pluginHandle, Serialization_Load);
-#endif
+
+		//g_loadEventDispatcher->AddEventSink(&g_FormInitialiser);
+//#ifdef RequiemBuild
+		//g_serialization->SetUniqueID(g_pluginHandle, 'REQ_');
+		//g_serialization->SetRevertCallback(g_pluginHandle, Serialization_Revert);
+		//g_serialization->SetSaveCallback(g_pluginHandle, Serialization_Save);
+		//g_serialization->SetLoadCallback(g_pluginHandle, Serialization_Load);
+//#endif
 
 #ifdef AlchemySorter
 	g_scaleform->Register("AlchemySorter", RegisterScaleform);

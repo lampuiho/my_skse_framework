@@ -114,17 +114,17 @@ namespace papyrusActor
 	}
 	bool FindWornBaseList(InventoryEntryData* pEntryData){
 		ExtendDataList* pExtendList = pEntryData->extendDataList;
-		if (pExtendList != nullptr) return pExtendList->Find(IsWorn());
+		if (pExtendList != nullptr) return pExtendList->Find(IsWorn()) != NULL;
 		return false;
 	}
 	bool FindFavouriteBaseList(InventoryEntryData* pEntryData){
 		ExtendDataList* pExtendList = pEntryData->extendDataList;
-		if (pExtendList != nullptr)  return pExtendList->Find(IsFavourite());
+		if (pExtendList != nullptr)  return pExtendList->Find(IsFavourite()) != NULL;
 		return false;
 	}
 	bool FindWornOrFavouriteBaseList(InventoryEntryData* pEntryData){
 		ExtendDataList* pExtendList = pEntryData->extendDataList;
-		if (pExtendList != nullptr) return pExtendList->Find(IsWornOrFavourite());
+		if (pExtendList != nullptr) return pExtendList->Find(IsWornOrFavourite()) != NULL;
 		return false;
 	}
 	bool WornHasArmorType(Actor* ref, UInt32 armourClass){

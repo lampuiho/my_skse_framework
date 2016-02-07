@@ -42,29 +42,29 @@ namespace LevelersTower{
 
 			BGSKeywordForm* keywordForm = &akBaseItem->keyword;
 			if (keywordForm->numKeywords > 0)
-				if (haskey(weaptypestaff) || papyrusForm::HasKeywordFormID(akBaseItem, Common::FormContainer::Forms[Common::FormContainer::WeapMaterialWood]))
+				if (haskey(weaptypestaff) || akBaseItem->keyword.HasKeyword((BGSKeyword*)(void*)Common::FormContainer::Forms[Common::FormContainer::WeapMaterialWood]))
 					return LevelersContWpnStavesREF;
-				else if (haskey(weapmaterialimperial) || papyrusForm::HasKeywordFormID(akBaseItem, Common::FormContainer::Forms[Common::FormContainer::WeapMaterialIron]))
+				else if (haskey(weapmaterialimperial) || akBaseItem->keyword.HasKeyword((BGSKeyword*)(void*)Common::FormContainer::Forms[Common::FormContainer::WeapMaterialIron]))
 					return LevelersContWpnIronREF;
-				else if (papyrusForm::HasKeywordFormID(akBaseItem, Common::FormContainer::Forms[Common::FormContainer::WeapMaterialSteel]))
+				else if (akBaseItem->keyword.HasKeyword((BGSKeyword*)(void*)Common::FormContainer::Forms[Common::FormContainer::WeapMaterialSteel]))
 					return LevelersContWpnSteelREF;
 				else if (haskey(weapmaterialdraugr) || haskey(weapmaterialdraugrhoned))
 					return LevelersContWpnDraugrREF;
-				else if (papyrusForm::HasKeywordFormID(akBaseItem, Common::FormContainer::Forms[Common::FormContainer::WeapMaterialOrcish]))
+				else if (akBaseItem->keyword.HasKeyword((BGSKeyword*)(void*)Common::FormContainer::Forms[Common::FormContainer::WeapMaterialOrcish]))
 					return LevelersContWpnOrcishREF;
-				else if (papyrusForm::HasKeywordFormID(akBaseItem, Common::FormContainer::Forms[Common::FormContainer::WeapMaterialElven]))
+				else if (akBaseItem->keyword.HasKeyword((BGSKeyword*)(void*)Common::FormContainer::Forms[Common::FormContainer::WeapMaterialElven]))
 					return LevelersContWpnElvenREF;
-				else if (papyrusForm::HasKeywordFormID(akBaseItem, Common::FormContainer::Forms[Common::FormContainer::WeapMaterialDwarven]))
+				else if (akBaseItem->keyword.HasKeyword((BGSKeyword*)(void*)Common::FormContainer::Forms[Common::FormContainer::WeapMaterialDwarven]))
 					return LevelersContWpnDwarvenREF;
-				else if (papyrusForm::HasKeywordFormID(akBaseItem, Common::FormContainer::Forms[Common::FormContainer::WeapMaterialGlass]))
+				else if (akBaseItem->keyword.HasKeyword((BGSKeyword*)(void*)Common::FormContainer::Forms[Common::FormContainer::WeapMaterialGlass]))
 					return LevelersContWpnGlassREF;
 				else if (haskey(weapmaterialfalmer) || haskey(weapmaterialfalmerhoned))
 					return LevelersContWpnFalmerREF;
 				else if (haskey(weapmaterialsilver))
 					return LevelersContWpnSilverREF;
-				else if (papyrusForm::HasKeywordFormID(akBaseItem, Common::FormContainer::Forms[Common::FormContainer::WeapMaterialEbony]))
+				else if (akBaseItem->keyword.HasKeyword((BGSKeyword*)(void*)Common::FormContainer::Forms[Common::FormContainer::WeapMaterialEbony]))
 					return LevelersContWpnEbonyREF;
-				else if (papyrusForm::HasKeywordFormID(akBaseItem, Common::FormContainer::Forms[Common::FormContainer::WeapMaterialDaedric]))
+				else if (akBaseItem->keyword.HasKeyword((BGSKeyword*)(void*)Common::FormContainer::Forms[Common::FormContainer::WeapMaterialDaedric]))
 					return LevelersContWpnDaedricREF;
 			
 			return LevelersContWpnUniqueREF;

@@ -45,6 +45,8 @@ class EffectSupplier:public BSTEventSink<
 
 EffectSupplier g_EffectSupplier;*/
 
+bool RequiemLoaded = false, DuelLoaded = false;
+
 template<typename PluginFormContainer>
 bool initialise_forms(){
 	UInt32 j = 0;
@@ -81,27 +83,43 @@ bool initialise_forms(){
 	return true;
 }
 
-void RegisterEventInternal(){
-	SafeWrite32(0xc4edb6, 0xfffff646);
-	if (initialise_forms<Common::FormContainer>())
+bool LoadPlugins() {
+	if (initialise_forms<Common::FormContainer>()) {
 #ifdef RequiemBuild
-		if (initialise_forms<Requiem::FormContainer>())
-		Requiem::RegisterPluginEvents();
-	//if (initialise_forms(&mslVT::BaseForms) && initialise_forms(&mslVT::Forms, mslVT::modName))
-		//g_MagicEffectApplyEventDispatcher->AddEventSink(&mslVT::g_DiseasePoisonImmunity);
-	/*SInt8 ModIndex = DataHandler::GetSingleton()->GetModIndex("Dual Sheath Redux.esp");
-	if (ModIndex > 0){
-		UInt32 formIndex = static_cast<UInt32>(ModIndex);
-		formIndex = (formIndex << 24) | 0x0000182B;
-		DualSheathReduxApplySpell = (SpellItem*)LookupFormByID(formIndex);
-		if (DualSheathReduxApplySpell)
-			g_CellAttachDetachEventDispatcher->AddEventSink(&g_EffectSupplier);
-	}*/
+		RequiemLoaded = initialise_forms<Common::FormContainer>();
 #endif
 #ifdef DuelBuild
-	if (initialise_forms<Duel::FormContainer>())
-		g_hitEventDispatcher->AddEventSink(&Duel::g_Duel_ImpactHandler);
+		DuelLoaded = initialise_forms<Duel::FormContainer>();
 #endif
+		return true;
+	}
+	return false;
+}
+
+void RegisterEventInternal()
+{
+	SafeWrite32(0xc4edb6, 0xfffff646);
+	if (LoadPlugins()) {
+#ifdef RequiemBuild
+		if (RequiemLoaded)
+			Requiem::RegisterPluginEvents();
+		//if (initialise_forms(&mslVT::BaseForms) && initialise_forms(&mslVT::Forms, mslVT::modName))
+			//g_MagicEffectApplyEventDispatcher->AddEventSink(&mslVT::g_DiseasePoisonImmunity);
+		/*SInt8 ModIndex = DataHandler::GetSingleton()->GetModIndex("Dual Sheath Redux.esp");
+		if (ModIndex > 0){
+			UInt32 formIndex = static_cast<UInt32>(ModIndex);
+			formIndex = (formIndex << 24) | 0x0000182B;
+			DualSheathReduxApplySpell = (SpellItem*)LookupFormByID(formIndex);
+			if (DualSheathReduxApplySpell)
+				g_CellAttachDetachEventDispatcher->AddEventSink(&g_EffectSupplier);
+		}*/
+#endif
+#ifdef DuelBuild
+		if (DuelLoaded)
+			g_hitEventDispatcher->AddEventSink(&Duel::g_Duel_ImpactHandler);
+	}
+#endif
+	}
 }
 
 void _fastcall RegisterEvent(UInt32 unk, UInt32 edx, UInt32 unk04){
@@ -292,13 +310,16 @@ void Serialization_Load(SKSESerializationInterface * intfc)
 bool RegisterPapyrus(VMClassRegistry* registry){
 	SafeWrite32(0xc4edb6, reinterpret_cast<std::intptr_t>(RegisterEvent)-0xc4edba);
 #ifdef RequiemBuild
-	Requiem::papyrusRequiem::MyRegisterFuncs(registry);
-	papyrusActor::MyRegisterFuncs(registry);
-	papyrusActiveMagicEffect::MyRegisterFuncs(registry);
+	if (RequiemLoaded)
+	{
+		Requiem::papyrusRequiem::MyRegisterFuncs(registry);
+		papyrusActor::MyRegisterFuncs(registry);
+		papyrusActiveMagicEffect::MyRegisterFuncs(registry);
+	}
 #endif
 #ifdef LevelersBuild
 	LevelersTower::MyRegisterFuncs(registry);
-	papyrusForm::MyRegisterFuncs(registry);
+	//papyrusForm::MyRegisterFuncs(registry);
 #endif
 	return true;
 }

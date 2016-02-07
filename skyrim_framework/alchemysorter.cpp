@@ -74,25 +74,7 @@ public:
 		for (UInt32 i = 0; i < ingredients.count; ++i){
 			GFxValue obj;
 			movieView->CreateObject(&obj);
-			RegisterString(&obj, movieView, "name", ingredients[i]->fullName.name.data);
-			RegisterNumber(&obj, "id", (UInt32)ingredients[i]);
-			RegisterNumber(&obj, "numItemEffects", ingredients[i]->effectItemList.count);
-			GFxValue effects;
-			GFxValue effectIDs;
-			movieView->CreateArray(&effects);
-			movieView->CreateArray(&effectIDs);
-			for (UInt32 j = 0; j < ingredients[i]->effectItemList.count; ++j){
-				GFxValue id;
-				id.SetNumber((UInt32)ingredients[i]->effectItemList[j]->mgef);
-				effectIDs.PushBack(&id);
-				GFxValue effect;
-				movieView->CreateObject(&effect);
-				RegisterNumber(&effect, format("mag", j).c_str(), ingredients[i]->effectItemList[j]->magnitude);
-				RegisterNumber(&effect, format("dur", j).c_str(), ingredients[i]->effectItemList[j]->duration);
-				effects.PushBack(&effect);
-			}
-			obj.SetMember("effects", &effects);
-			obj.SetMember("effectIDs", &effectIDs);
+			scaleformExtend::FormData(&obj, args->movie, ingredients[i], true, true);
 			gfxIngredients->PushBack(&obj);
 		}
 

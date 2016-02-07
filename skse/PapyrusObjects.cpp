@@ -4,8 +4,6 @@
 
 #include "PapyrusVM.h"
 
-#include <algorithm>
-
 namespace
 {
 	static const size_t kMaxNameLen  = 1024;

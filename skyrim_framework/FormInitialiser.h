@@ -1,8 +1,11 @@
 #pragma once
 #include "skse\GameEvents.h"
+
 class VMClassRegistry;
 struct SKSESerializationInterface;
 struct TESLoadGameEvent;
+extern bool RequiemLoaded, DuelLoaded;
+
 void Serialization_Revert(SKSESerializationInterface * intfc);
 void Serialization_Save(SKSESerializationInterface * intfc);
 void Serialization_Load(SKSESerializationInterface * intfc);
@@ -23,3 +26,4 @@ extern FormInitialiser g_FormInitialiser;
 
 template<typename PluginFormContainer>
 bool initialise_forms();
+bool LoadPlugins();

@@ -65,8 +65,9 @@ namespace papyrusForm
 
 		registry->RegisterFunction(
 			new NativeFunction1 <TESForm, bool, BSFixedString>("IsFromMod", "Form", papyrusForm::IsFromMod, registry));
-			*/
+
 		registry->RegisterFunction(
 			new NativeFunction1 <TESForm, bool, BSFixedString>("HasKeywordString", "Form", papyrusForm::HasKeywordString, registry));
+			*/
 	}
 }
